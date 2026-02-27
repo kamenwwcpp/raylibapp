@@ -4,7 +4,7 @@ int main() {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    SetTraceLogLevel(LOG_NONE); // убирает логи raylib
+    SetTraceLogLevel(LOG_NONE); // убирает логи raylib.
     InitWindow(screenWidth, screenHeight, "Raylib Project - Hello!");
 
     SetTargetFPS(240);
