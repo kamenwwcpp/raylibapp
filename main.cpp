@@ -6,7 +6,7 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "Raylib Project - Hello!");
 
-    SetTargetFPS(60);
+    SetTargetFPS(240);
 
     while (!WindowShouldClose()) {
         BeginDrawing();
