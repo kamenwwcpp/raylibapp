@@ -2,7 +2,7 @@
 raylib-app
 *.o
 *.out
-
+*.exe
 # Build system
 Makefile
 
