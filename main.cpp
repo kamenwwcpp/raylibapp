@@ -1,24 +1,24 @@
-#include "raylib.h"
+#include "include/raylib.h"
 
-int main() {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+int main(void)
+{
+    InitWindow(1200, 800, "Raylib Project");
+    SetTargetFPS(60);
+    SetTraceLogLevel(LOG_WARNING);
 
-    SetTraceLogLevel(LOG_NONE); // убирает логи raylib.
-    InitWindow(screenWidth, screenHeight, "Raylib Project - Hello!");
+    Font font = LoadFontEx("resources/font/NTBrickSans.ttf", 100, nullptr, 0);
+    GenTextureMipmaps(&font.texture);
+    SetTextureFilter(font.texture, TEXTURE_FILTER_BILINEAR);
 
-    SetTargetFPS(240);
-
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose())
+    {
         BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-        DrawText("Hello, Raylib!", 190, 200, 20, ORANGE);
-
+            ClearBackground(RAYWHITE);
+            DrawTextEx(font, "Hello, Raylib!", { 190, 200 }, 100, 1, BLACK);
         EndDrawing();
     }
 
+    UnloadFont(font);
     CloseWindow();
-
     return 0;
 }
