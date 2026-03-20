@@ -1,20 +1,33 @@
-# Compiled binaries
-raylib-app
-*.o
-*.out
-*.exe
-# Build system
-Makefile
-
-# macOS specific files
-.DS_Store
-
-# Editor specific settings
-# If your friend is on Windows/Linux, the paths in .vscode/c_cpp_properties.json 
-# will differ from yours, so it's best to ignore this folder.
-.vscode/
-
-# Build artifacts
+# ─── Build output ─────────────────────────────────────────────────────────────
 build/
 bin/
 obj/
+
+# ─── Compiled artifacts ────────────────────────────────────────────────────────
+raylibapp
+*.o
+*.out
+*.a
+*.so
+*.so.*
+*.exe
+*.dll
+
+# ─── CMake ────────────────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+
+# ─── Editors ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
