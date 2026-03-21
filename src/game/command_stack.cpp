@@ -1,5 +1,6 @@
 #include "command_stack.h"
 #include <cassert>
+#include <utility>
 
 CommandStack::CommandStack(int limit) : _limit(limit) {}
 
