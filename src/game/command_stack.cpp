@@ -1,5 +1,5 @@
 #include "command_stack.h"
-#include "commands.h"
+#include <cassert>
 
 CommandStack::CommandStack(int limit) : _limit(limit) {}
 
@@ -12,6 +12,7 @@ bool CommandStack::push(Command cmd) {
 }
 
 Command CommandStack::pop() {
+  assert(!isEmpty());
   Command cmd = _commands.back();
   _commands.pop_back();
   return cmd;
@@ -23,10 +24,13 @@ void CommandStack::remove(int index) {
   _commands.erase(_commands.begin() + index);
 }
 
-int CommandStack::size() const { return _commands.size(); }
+int CommandStack::size() const { return static_cast<int>(_commands.size()); }
 
 bool CommandStack::isFull() const { return size() >= _limit; }
 
 bool CommandStack::isEmpty() const { return _commands.empty(); }
 
-Command CommandStack::get(int index) const { return _commands[index]; }
+Command CommandStack::get(int index) const {
+  assert(index >= 0 && index < size());
+  return _commands[index];
+}
