@@ -5,21 +5,31 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+include(FetchContent)
+FetchContent_Declare(
+    raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG        5.5
+    GIT_SHALLOW    TRUE
+)
+FetchContent_MakeAvailable(raylib)
+
 add_executable(${PROJECT_NAME} src/main.cpp)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 
-add_library(raylib STATIC IMPORTED)
-set_target_properties(raylib PROPERTIES
-    IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/lib/libraylib.a
-)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE
-    raylib
-    GL
-    m
-    pthread
-    dl
-    rt
-    X11
-)
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE winmm)
+elseif(APPLE)
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+        "-framework OpenGL"
+        "-framework Cocoa"
+        "-framework IOKit"
+        "-framework CoreAudio"
+        "-framework CoreVideo"
+    )
+elseif(UNIX)
+    target_link_libraries(${PROJECT_NAME} PRIVATE
+        GL m pthread dl rt X11
+    )
+endif()

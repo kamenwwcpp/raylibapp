@@ -5,14 +5,33 @@
 ## Зависимости
 
 - CMake 3.16+
-- GCC или Clang (C++17)
-- raylib 5.5
-- OpenGL, X11
+- C++17 compiler (GCC, Clang, MSVC)
+- Git
+
+raylib загружается и собирается автоматически при конфигурации проекта.
 
 ## Сборка
+
+### Linux
 
 ```sh
 cmake -B build
 cmake --build build
 ./build/raylibapp
+```
+
+### macOS
+
+```sh
+cmake -B build
+cmake --build build
+./build/raylibapp
+```
+
+### Windows
+
+```sh
+cmake -B build
+cmake --build build
+.\build\Debug\raylibapp.exe
 ```
