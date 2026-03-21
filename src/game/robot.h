@@ -1,6 +1,7 @@
 #pragma once
 
 #include "commands.h"
+#include <string>
 
 enum class Direction { UP, DOWN, LEFT, RIGHT };
 
