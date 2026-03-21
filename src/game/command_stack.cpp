@@ -19,9 +19,14 @@ Command CommandStack::pop() {
   return cmd;
 }
 
-void CommandStack::swap(int i, int j) { std::swap(_commands[i], _commands[j]); }
+void CommandStack::swap(int i, int j) {
+  assert(i >= 0 && i < size());
+  assert(j >= 0 && j < size());
+  std::swap(_commands[i], _commands[j]);
+}
 
 void CommandStack::remove(int index) {
+  assert(index >= 0 && index < size());
   _commands.erase(_commands.begin() + index);
 }
 
