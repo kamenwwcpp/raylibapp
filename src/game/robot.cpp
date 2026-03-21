@@ -15,34 +15,52 @@ Robot::Robot(int x, int y, Direction dir) : _x(x), _y(y), _dir(dir) {}
 void Robot::applyCommand(Command cmd) {
   switch (cmd.type) {
   case CommandType::MOVE:
-    if (_dir == Direction::UP)
+    switch (_dir) {
+    case Direction::UP:
       _y--;
-    if (_dir == Direction::DOWN)
+      break;
+    case Direction::DOWN:
       _y++;
-    if (_dir == Direction::LEFT)
+      break;
+    case Direction::LEFT:
       _x--;
-    if (_dir == Direction::RIGHT)
+      break;
+    case Direction::RIGHT:
       _x++;
+      break;
+    }
     break;
   case CommandType::TURN_LEFT:
-    if (_dir == Direction::UP)
+    switch (_dir) {
+    case Direction::UP:
       _dir = Direction::LEFT;
-    if (_dir == Direction::LEFT)
+      break;
+    case Direction::LEFT:
       _dir = Direction::DOWN;
-    if (_dir == Direction::DOWN)
+      break;
+    case Direction::DOWN:
       _dir = Direction::RIGHT;
-    if (_dir == Direction::RIGHT)
+      break;
+    case Direction::RIGHT:
       _dir = Direction::UP;
+      break;
+    }
     break;
   case CommandType::TURN_RIGHT:
-    if (_dir == Direction::UP)
+    switch (_dir) {
+    case Direction::UP:
       _dir = Direction::RIGHT;
-    if (_dir == Direction::LEFT)
+      break;
+    case Direction::LEFT:
       _dir = Direction::UP;
-    if (_dir == Direction::DOWN)
+      break;
+    case Direction::DOWN:
       _dir = Direction::LEFT;
-    if (_dir == Direction::RIGHT)
+      break;
+    case Direction::RIGHT:
       _dir = Direction::DOWN;
+      break;
+    }
     break;
   case CommandType::GRAB:
     break;
