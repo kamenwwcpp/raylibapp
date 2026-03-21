@@ -9,6 +9,7 @@ Command commandFromString(const std::string &s) {
     return {CommandType::TURN_RIGHT};
   if (s == "grab")
     return {CommandType::GRAB};
+  return {CommandType::MOVE};
 }
 
 std::string commandToString(CommandType type) {
@@ -22,4 +23,5 @@ std::string commandToString(CommandType type) {
   case CommandType::GRAB:
     return "grab";
   }
+  return "move";
 }
