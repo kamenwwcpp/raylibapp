@@ -4,6 +4,8 @@
 
 enum class Direction { UP, DOWN, LEFT, RIGHT };
 
+Direction directionFromString(const std::string &s);
+
 class Robot {
 public:
   Robot(int x, int y, Direction dir);
@@ -15,6 +17,6 @@ public:
   Direction getDirection() const;
 
 private:
-    int _x, _y;
-    Direction _dir;
+  int _x, _y;
+  Direction _dir;
 };

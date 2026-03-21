@@ -1,5 +1,15 @@
 #include "robot.h"
 
+Direction directionFromString(const std::string &s) {
+  if (s == "up")
+    return Direction::UP;
+  if (s == "down")
+    return Direction::DOWN;
+  if (s == "left")
+    return Direction::LEFT;
+  return Direction::RIGHT;
+}
+
 Robot::Robot(int x, int y, Direction dir) : _x(x), _y(y), _dir(dir) {}
 
 void Robot::applyCommand(Command cmd) {

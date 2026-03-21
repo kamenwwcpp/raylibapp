@@ -14,14 +14,23 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
+FetchContent_Declare(
+    nlohmann_json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG        v3.11.3
+    GIT_SHALLOW    TRUE
+)
+FetchContent_MakeAvailable(nlohmann_json)
+
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/game/commands.cpp
     src/game/command_stack.cpp
     src/game/robot.cpp
+    src/game/level.cpp
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib nlohmann_json::nlohmann_json)
 
 if(WIN32)
     target_link_libraries(${PROJECT_NAME} PRIVATE winmm)
