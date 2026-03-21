@@ -12,9 +12,9 @@ Level Level::loadFromFile(const std::string &path) {
   level.width = j["width"];
   level.height = j["height"];
 
-  level.start = {j["start"]["x"], j["start"]["y"]};
+  level.startPos = {j["start"]["x"], j["start"]["y"]};
   level.startDir = directionFromString(j["start"]["dir"]);
-  level.exit = {j["exit"]["x"], j["exit"]["y"]};
+  level.exitPos = {j["exit"]["x"], j["exit"]["y"]};
 
   for (auto &w : j["walls"])
     level.walls.push_back({w[0], w[1]});
