@@ -1,0 +1,56 @@
+Checks: '-*,readability-identifier-naming'
+WarningsAsErrors: ''
+HeaderFilterRegex: 'src/.*'
+
+CheckOptions:
+  # Variables (local, global, parameters, struct/class members) — camelCase
+  - key: readability-identifier-naming.LocalVariableCase
+    value: camelCase
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: camelCase
+  - key: readability-identifier-naming.ParameterCase
+    value: camelCase
+  - key: readability-identifier-naming.MemberCase
+    value: camelCase
+  - key: readability-identifier-naming.PrivateMemberCase
+    value: camelCase
+  - key: readability-identifier-naming.ProtectedMemberCase
+    value: camelCase
+
+  # Constants — camelCase (raylib treats const vars same as regular vars)
+  - key: readability-identifier-naming.ConstantCase
+    value: camelCase
+  - key: readability-identifier-naming.ConstantMemberCase
+    value: camelCase
+  - key: readability-identifier-naming.LocalConstantCase
+    value: camelCase
+
+  # Functions and methods — PascalCase
+  - key: readability-identifier-naming.FunctionCase
+    value: CamelCase
+  - key: readability-identifier-naming.MethodCase
+    value: CamelCase
+
+  # Structs and classes — PascalCase
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+
+  # Enums — PascalCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+
+  # Enum constants — UPPER_CASE
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+
+  # Macros and defines — UPPER_CASE
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  # Type aliases — PascalCase
+  - key: readability-identifier-naming.TypeAliasCase
+    value: CamelCase
+  - key: readability-identifier-naming.TypedefCase
+    value: CamelCase
