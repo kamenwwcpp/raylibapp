@@ -1,0 +1,56 @@
+BasedOnStyle: LLVM
+Language: Cpp
+
+# Indentation — 4 spaces, no tabs
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+
+# Braces — Allman style (opening brace on its own line)
+BreakBeforeBraces: Allman
+
+# Pointers — attach to type: MyType *pointer
+PointerAlignment: Right
+ReferenceAlignment: Right
+
+# Spaces around operators and keywords
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpaceBeforeAssignmentOperators: true
+SpaceInEmptyParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpacesInAngles: false
+SpaceBeforeSquareBrackets: false
+
+# Conditions with parens: if ( (a > 1) && (b < 50) )
+SpacesInConditionalStatement: true
+
+# Short constructs — keep expanded for readability
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+
+# Line length
+ColumnLimit: 120
+
+# Break long function parameters
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+
+# Ternary: condition? a : b
+BreakBeforeTernaryOperators: false
+
+# Includes
+SortIncludes: CaseInsensitive
+IncludeBlocks: Preserve
+
+# Misc
+Cpp11BracedListStyle: true
+IndentCaseLabels: false
+NamespaceIndentation: None
